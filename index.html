@@ -624,20 +624,32 @@ $('#simply-countdown-losange').simplyCountdown({
 });
 
 </script>
+<!-- SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script>
 
-	
-    document.getElementById("weddingForm").addEventListener("submit", function(e) {
+	document.getElementById("weddingForm").addEventListener("submit", function(e) {
 		e.preventDefault();
+
 		var fianakaviana = document.getElementById("fianakaviana").value;
 		var fahafahana = document.getElementById("fahafahana").value;
 		var isany = document.getElementById("isany").value;
 		var firariantsoa = document.getElementById("firariantsoa").value;
 		var groupe_isany = $("#groupe_isany");
-      alert("Misaotra betsaka ! 😊");
-      // Tu peux envoyer les données ici à un serveur ou service externe
-    });
+
+		Swal.fire({
+			title: 'Misaotra betsaka ! 😊',
+			text: 'Voaray ny safidinao',
+			icon: 'success',
+			confirmButtonText: 'OK'
+		});
+
+		// Tu peux envoyer les données ici à un serveur ou service externe
+	});
+
   </script>
 
   <script>
