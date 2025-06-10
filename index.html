@@ -515,20 +515,36 @@ Ary hofofoiko ho vadiko mandrakizay ianao, eny, hofofoiko ho vadiko amin'ny rari
 						</div>
 						<div class="col-md-4 col-sm-4">
 							<div class="form-group">
-								<label for="email" class="sr-only">Fahafahana</label>
-								<input type="texte" class="form-control" id="texte" placeholder="Fahafahana">
+								<label for="Fahafahana" class="sr-only">Fahafahana</label>
+								<select class="form-control" id="Fahafahana">
+									<option value="">Fidio</option>
+									<option value="Eny">Eny</option>
+									<option value="Tsia">Tsia</option>
+								</select>
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-4">
 							<div class="form-group">
-								<label for="number" class="sr-only">Isan'ireo hoavy tao amin'ny nasaina</label>
-								<input type="texte" class="form-control" id="isany" placeholder="isan'ireo hoavy tao amin'ny nasaina">
+								<label for="isany" class="sr-only">Isan'ireo hoavy tao amin'ny nasaina</label>
+								<input type="text" class="form-control" id="isany" placeholder="Isan'ireo hoavy tao amin'ny nasaina" oninput="verifierIsany(this)">
 							</div>
 						</div>
+
+						<script>
+							function verifierIsany(input) {
+								// Vérifie si la valeur entrée n'est pas un nombre
+								if (input.value !== '' && isNaN(input.value)) {
+									alert("Aoka mba hanoratra chiffre azafady");
+									input.value = '';       // Vide le champ
+									input.focus();          // Redonne le focus pour que l'utilisateur puisse corriger
+								}
+							}
+						</script>
+
 						<div class="col-md-4 col-sm-4">
 							<div class="form-group">
 								<label for="isany" class="sr-only">Firariantsoa</label>
-								<textarea class="form-control" id="isany" placeholder="Firariantsoa" rows="4"></textarea>
+								<textarea class="form-control" id="firariantsoa" placeholder="Firariantsoa" rows="4"></textarea>
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-4">
