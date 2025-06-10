@@ -524,7 +524,7 @@ Ary hofofoiko ho vadiko mandrakizay ianao, eny, hofofoiko ho vadiko amin'ny rari
 
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-4">
+						<div class="col-md-4 col-sm-4" id="groupe_isany">
 							<div class="form-group">
 								<label for="isany" class="sr-only">Isan'ireo hoavy tao amin'ny nasaina</label>
 								<input type="text" class="form-control" id="isany" placeholder="Isan'ireo hoavy tao amin'ny nasaina" oninput="verifierIsany(this)" required>
@@ -627,8 +627,30 @@ Ary hofofoiko ho vadiko mandrakizay ianao, eny, hofofoiko ho vadiko amin'ny rari
 </script>
 
   <script>
+	$(document).ready(function () {
+		$("#fahafahana").on("change", function () {
+			var fiankaviana = $("#fiankaviana").val();
+			var fahafahana = $(this).val(); // récupère la nouvelle valeur
+			var isany = $("#isany").val();
+			var firariantsoa = $("#firariantsoa").val();
+			var groupe_isany = $("#groupe_isany");
+
+			if (fahafahana === "Tsia") {
+				groupe_isany.hide(); // cache le groupe
+			} else {
+				groupe_isany.show(); // l'affiche sinon
+			}
+		});
+	});
+
+
     document.getElementById("weddingForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+		e.preventDefault();
+		var fiankaviana = document.getElementById("fiankaviana").value;
+		var fahafahana = document.getElementById("fahafahana").value;
+		var isany = document.getElementById("isany").value;
+		var firariantsoa = document.getElementById("firariantsoa").value;
+		var groupe_isany = $("#groupe_isany");
       alert("Misaotra betsaka ! 😊");
       // Tu peux envoyer les données ici à un serveur ou service externe
     });
