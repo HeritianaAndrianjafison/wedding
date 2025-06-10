@@ -627,26 +627,11 @@ Ary hofofoiko ho vadiko mandrakizay ianao, eny, hofofoiko ho vadiko amin'ny rari
 </script>
 
   <script>
-	$(document).ready(function () {
-		$("#fahafahana").on("change", function () {
-			var fiankaviana = $("#fiankaviana").val();
-			var fahafahana = $(this).val(); // récupère la nouvelle valeur
-			var isany = $("#isany").val();
-			var firariantsoa = $("#firariantsoa").val();
-			var groupe_isany = $("#groupe_isany");
 
-			if (fahafahana === "Tsia") {
-				groupe_isany.hide(); // cache le groupe
-			} else {
-				groupe_isany.show(); // l'affiche sinon
-			}
-		});
-	});
-
-
+	
     document.getElementById("weddingForm").addEventListener("submit", function(e) {
 		e.preventDefault();
-		var fiankaviana = document.getElementById("fiankaviana").value;
+		var fianakaviana = document.getElementById("fianakaviana").value;
 		var fahafahana = document.getElementById("fahafahana").value;
 		var isany = document.getElementById("isany").value;
 		var firariantsoa = document.getElementById("firariantsoa").value;
@@ -655,6 +640,24 @@ Ary hofofoiko ho vadiko mandrakizay ianao, eny, hofofoiko ho vadiko amin'ny rari
       // Tu peux envoyer les données ici à un serveur ou service externe
     });
   </script>
+
+  <script>
+ document.getElementById('Fahafahana').addEventListener('change', function () {
+    const selectedValue = this.value;
+    console.log('Option choisie :', selectedValue);
+    var isany = document.getElementById("isany"); // on récupère l'élément, pas sa valeur
+
+    if(selectedValue == "Tsia") {
+        isany.style.display = "none";  // pas de point-virgule dans la valeur
+        isany.value = 0;
+    } else {
+        isany.style.display = ""; // ou "block" ou ce que tu veux pour le montrer
+    }
+});
+
+</script>
+
+
 
 	</body>
 </html>
