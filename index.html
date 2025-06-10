@@ -542,7 +542,7 @@ Ary hofofoiko ho vadiko mandrakizay ianao, eny, hofofoiko ho vadiko amin'ny rari
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-10 col-md-offset-1">
-					<form class="form-inline">
+					<form class="form-inline" class="weddingForm" id="weddingForm">
 						<div class="col-md-4 col-sm-4">
 							<div class="form-group">
 								<label for="name" class="sr-only">Fianakavina</label>
@@ -586,10 +586,9 @@ Ary hofofoiko ho vadiko mandrakizay ianao, eny, hofofoiko ho vadiko amin'ny rari
 					</p>
 					<p>
 						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-instagram"></i></a></li>
 							<li><a href="#"><i class="icon-facebook"></i></a></li>
 							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
 						</ul>
 					</p>
 				</div>
@@ -645,6 +644,14 @@ Ary hofofoiko ho vadiko mandrakizay ianao, eny, hofofoiko ho vadiko amin'ny rari
         enableUtc: false
     });
 </script>
+
+  <script>
+    document.getElementById("weddingForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Misaotra betsaka ! 😊");
+      // Tu peux envoyer les données ici à un serveur ou service externe
+    });
+  </script>
 
 	</body>
 </html>
