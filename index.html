@@ -662,23 +662,41 @@ $('#simply-countdown-losange').simplyCountdown({
   <script>
 
 	document.getElementById("weddingForm").addEventListener("submit", function(e) {
-		e.preventDefault();
+			e.preventDefault();
 
-		var fianakaviana = document.getElementById("fianakaviana").value;
-		var fahafahana = document.getElementById("fahafahana").value;
-		var isany = document.getElementById("isany").value;
-		var firariantsoa = document.getElementById("firariantsoa").value;
-		var groupe_isany = $("#groupe_isany");
+			var fianakaviana = document.getElementById("fianakaviana").value;
+			var fahafahana = document.getElementById("fahafahana").value;
+			var isany = document.getElementById("isany").value;
+			var firariantsoa = document.getElementById("firariantsoa").value;
 
-		Swal.fire({
-			title: 'Misaotra betsaka ! 😊',
-			text: 'Voaray ny safidinao',
-			icon: 'success',
-			confirmButtonText: 'OK'
+			fetch("https://script.google.com/macros/s/AKfycbzwOqPAv8p2yRBTs7pvtjOLpBtyzJEFMGfBGRc1B5pTSHrWLqYAGCOVQ7cLf6yN9QDN0w/exec", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify({
+					fianakaviana: fianakaviana,
+					fahafahana: fahafahana,
+					isany: isany,
+					firariantsoa: firariantsoa
+				})
+			})
+			.then(response => response.text())
+			.then(data => {
+				console.log("Réponse du script Google :", data);
+				Swal.fire({
+					title: 'Misaotra betsaka ! 😊',
+					text: 'Voaray ny safidinao',
+					icon: 'success',
+					confirmButtonText: 'OK'
+				});
+				document.getElementById("weddingForm").reset();
+			})
+			.catch(error => {
+				console.error("Erreur :", error);
+				alert("Erreur lors de l'envoi !");
+			});
 		});
-
-		// Tu peux envoyer les données ici à un serveur ou service externe
-	});
 
   </script>
 
