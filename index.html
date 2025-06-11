@@ -608,24 +608,24 @@ Ary hofofoiko ho vadiko mandrakizay ianao, eny, hofofoiko ho vadiko amin'ny rari
 				</div>
 				<script>
 					window.addEventListener('load', function () {
-						Swal.fire({
-							title: '🎵 Musique de fond',
-							text: "Souhaitez-vous écouter la musique de fond pendant votre visite ?",
-							icon: 'question',
-							showCancelButton: true,
-							confirmButtonText: 'Oui',
-							cancelButtonText: 'Non'
-						}).then((result) => {
-							if (result.isConfirmed) {
-								// Lancer la musique avec volume à moitié
-								var audio = new Audio('musique.wav');
-								audio.loop = true;
-								audio.volume = 0.5; // Volume à 50%
-								audio.play();
-							}
-						});
+					Swal.fire({
+						title: '🎵 Musique de fond',
+						text: "Souhaitez-vous écouter la musique de fond pendant votre visite ?",
+						icon: 'question',
+						showCancelButton: true,
+						confirmButtonText: 'Oui',
+						cancelButtonText: 'Non'
+					}).then((result) => {
+						if (result.isConfirmed) {
+						// Lancer la musique
+						var audio = new Audio('musique.wav');
+						audio.loop = true;
+						audio.play();
+						}
 					});
-				</script>
+					});
+					</script>
+
 			</div>
 
 		</div>
