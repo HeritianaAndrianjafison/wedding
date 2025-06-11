@@ -606,6 +606,26 @@ Ary hofofoiko ho vadiko mandrakizay ianao, eny, hofofoiko ho vadiko amin'ny rari
 						</ul>
 					</p>
 				</div>
+				<script>
+					window.addEventListener('load', function () {
+					Swal.fire({
+						title: '🎵 Musique de fond',
+						text: "Souhaitez-vous écouter la musique de fond pendant votre visite ?",
+						icon: 'question',
+						showCancelButton: true,
+						confirmButtonText: 'Oui',
+						cancelButtonText: 'Non'
+					}).then((result) => {
+						if (result.isConfirmed) {
+						// Lancer la musique
+						var audio = new Audio('musique.mp3');
+						audio.loop = true;
+						audio.play();
+						}
+					});
+					});
+					</script>
+
 			</div>
 
 		</div>
