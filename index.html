@@ -668,23 +668,29 @@ Ary hofofoiko ho vadiko mandrakizay ianao, eny, hofofoiko ho vadiko amin'ny rari
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
-	<script>
-    var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+<script>
+    // Configuration d’une date future : 21 août 2025 à 00:00:00
+    simplyCountdown('.simply-countdown-one', {
+        year: 2025,
+        month: 8,       // Août
+        day: 21,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+        enableUtc: false // Utiliser l’heure locale
+    });
 
-   simplyCountdown('.simply-countdown-one', {
-    year: 2025,
-    month: 8,        // Août
-    day: 21
-});
-
-$('#simply-countdown-losange').simplyCountdown({
-    year: 2025,
-    month: 8,
-    day: 21,
-    enableUtc: false
-});
-
+    $('#simply-countdown-losange').simplyCountdown({
+        year: 2025,
+        month: 8,
+        day: 21,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+        enableUtc: false
+    });
 </script>
+
 <!-- SweetAlert2 CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 <!-- SweetAlert2 JS -->
